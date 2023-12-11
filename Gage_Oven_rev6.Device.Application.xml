@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="3.5.15.50" runtimeid="3.5.10.30" libversion="3.5.15.20" compiler="3.5.15.50" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 5+" settings="LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="Gage_Oven_rev6" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeSimple name="T_UDINT" size="4" swapsize="4" typeclass="UDInt" iecname="UDINT" />
+    <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+    <TypeUserDef name="T_F_TRIG" size="2" nativesize="8" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="F_TRIG">
+      <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_R_TRIG" size="2" nativesize="8" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_TRIG">
+      <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_TON" size="16" nativesize="28" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="TON">
+      <UserDefElement iecname="IN" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="PT" type="T_TIME" byteoffset="4" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_R_Timer" size="61" nativesize="112" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_Timer">
+      <UserDefElement iecname="T_IN" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="TimerReset" type="T_BOOL" byteoffset="1" vartype="VAR_INPUT" />
+      <UserDefElement iecname="T_PT" type="T_TIME" byteoffset="4" vartype="VAR_INPUT" />
+      <UserDefElement iecname="RTON_OUT" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="RTON_ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="R_TRIG_0" type="T_R_TRIG" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="F_TRIG_0" type="T_F_TRIG" byteoffset="18" vartype="VAR" />
+      <UserDefElement iecname="TON_0" type="T_TON" byteoffset="20" vartype="VAR" />
+      <UserDefElement iecname="RTON_ET_Tmo" type="T_TIME" byteoffset="36" vartype="VAR" />
+      <UserDefElement iecname="T_ET" type="T_TIME" byteoffset="40" vartype="VAR" />
+      <UserDefElement iecname="dd" type="T_BOOL" byteoffset="44" vartype="VAR" />
+      <UserDefElement iecname="RTO_ET_1" type="T_TIME" byteoffset="48" vartype="VAR" />
+      <UserDefElement iecname="T_PT_Tmp" type="T_TIME" byteoffset="52" vartype="VAR" />
+      <UserDefElement iecname="RTON_ET1" type="T_TIME" byteoffset="56" vartype="VAR" />
+      <UserDefElement iecname="Falling_edge" type="T_BOOL" byteoffset="60" vartype="VAR" />
+    </TypeUserDef>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="PLC_PRG">
+        <Node name="_Completed" type="T_BOOL" access="ReadWrite" />
+        <Node name="A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Actual_fan_time" type="T_TIME" access="ReadWrite" />
+        <Node name="Actual_soak_time" type="T_TIME" access="ReadWrite" />
+        <Node name="Controller" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_A1" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_A2" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_B1" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_B2" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_C1" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_C2" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_D1" type="T_BOOL" access="ReadWrite" />
+        <Node name="Door_D2" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_Controller_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_Controller_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_Controller_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_Controller_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_Controller_timer" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Fan_On_time" type="T_TIME" access="ReadWrite" />
+        <Node name="Fans_off" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_Off_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_Off_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_Off_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_Off_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heater_Switch_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Heaters_Controller" type="T_BOOL" access="ReadWrite" />
+        <Node name="light" type="T_BOOL" access="ReadWrite" />
+        <Node name="light2" type="T_BOOL" access="ReadWrite" />
+        <Node name="Material_A_Selected" type="T_BOOL" access="ReadWrite" />
+        <Node name="Material_B_Selected" type="T_BOOL" access="ReadWrite" />
+        <Node name="Material_C_Selected" type="T_BOOL" access="ReadWrite" />
+        <Node name="Material_D_Selected" type="T_BOOL" access="ReadWrite" />
+        <Node name="n" type="T_UDINT" access="ReadWrite" />
+        <Node name="ON_Oven" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_A_completed" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_A_locked" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_A_On" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_A_Reset_Time" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_A_Target_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_A_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_B_completed" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_B_locked" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_B_On" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_B_Reset_Time" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_B_Target_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_B_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_C_locked" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_C_On" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_C_Target_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_C_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_Coil_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_Coil_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_Coil_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_Coil_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_controler_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_controler_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_controler_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_controler_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_D_locked" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_D_On" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_D_Target_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_D_Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Oven_locked" type="T_BOOL" access="ReadWrite" />
+        <Node name="Oven_selected" type="T_BOOL" access="ReadWrite" />
+        <Node name="Overheat" type="T_BOOL" access="ReadWrite" />
+        <Node name="Overheat_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Overheat_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Overheat_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Overheat_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="PT100_value_A" type="T_WORD" access="ReadWrite" />
+        <Node name="PT100_value_B" type="T_WORD" access="ReadWrite" />
+        <Node name="PT100_value_C" type="T_WORD" access="ReadWrite" />
+        <Node name="PT100_value_D" type="T_WORD" access="ReadWrite" />
+        <Node name="R_Timer_0" type="T_R_Timer" access="ReadWrite" />
+        <Node name="R_Timer_1" type="T_R_Timer" access="ReadWrite" />
+        <Node name="Ramp_Up_Completed" type="T_BOOL" access="ReadWrite" />
+        <Node name="Ramp_Up_Completed_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Ramp_Up_Completed_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Ramp_Up_Completed_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Ramp_Up_Completed_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="RTON" type="T_TIME" access="ReadWrite" />
+        <Node name="RTON1" type="T_TIME" access="ReadWrite" />
+        <Node name="Select_Oven_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Select_Oven_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Select_Oven_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Select_Oven_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="Soak_time" type="T_TIME" access="ReadWrite" />
+        <Node name="Soak_timer_A" type="T_BOOL" access="ReadWrite" />
+        <Node name="Soak_timer_B" type="T_BOOL" access="ReadWrite" />
+        <Node name="Soak_timer_C" type="T_BOOL" access="ReadWrite" />
+        <Node name="Soak_timer_D" type="T_BOOL" access="ReadWrite" />
+        <Node name="start" type="T_BOOL" access="ReadWrite" />
+        <Node name="Start_Curing_Process" type="T_BOOL" access="ReadWrite" />
+        <Node name="Start_Heating" type="T_BOOL" access="ReadWrite" />
+        <Node name="Start_Oven" type="T_BOOL" access="ReadWrite" />
+        <Node name="Stop_Curing_Process" type="T_BOOL" access="ReadWrite" />
+        <Node name="Stop_Heating" type="T_BOOL" access="ReadWrite" />
+        <Node name="Stop_Oven" type="T_BOOL" access="ReadWrite" />
+        <Node name="T_PT" type="T_TIME" access="ReadWrite" />
+        <Node name="T_PT1" type="T_TIME" access="ReadWrite" />
+        <Node name="Temp" type="T_WORD" access="ReadWrite" />
+        <Node name="Temp_30" type="T_WORD" access="ReadWrite" />
+        <Node name="Time_A" type="T_INT" access="ReadWrite" />
+        <Node name="time_ON" type="T_BOOL" access="ReadWrite" />
+        <Node name="time_ON1" type="T_BOOL" access="ReadWrite" />
+        <Node name="timer_reset" type="T_BOOL" access="ReadWrite" />
+        <Node name="TON_0" type="T_TON" access="ReadWrite" />
+        <Node name="TON_1" type="T_TON" access="ReadWrite" />
+        <Node name="TON_2" type="T_TON" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
